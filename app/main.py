@@ -18,6 +18,10 @@ else:
 def home():
     return render_template('index.html')
 
+@app.route(f'/example')
+def example():
+    return render_template('example.html')
+
 # define additional routes here
 # for example:
 # @app.route(f'{base_url}/team_members')
@@ -26,7 +30,8 @@ def home():
 
 if __name__ == '__main__':
     # IMPORTANT: change url to the site where you are editing this file.
-    website_url = 'url'
+    # website_url = 'cocalc4.ai-camp.org'
+    website_url = f'localhost:{port}'
     
-    print(f'Try to open\n\n    https://{website_url}' + base_url + '\n\n')
+    print(f'Try to open\n\n    {website_url}' + base_url + '\n\n')
     app.run(host = '0.0.0.0', port=port, debug=True)
