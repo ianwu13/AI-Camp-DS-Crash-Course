@@ -20,7 +20,7 @@
             <!-- Navigation-->
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
                 <div class="container px-5">
-                    <a class="navbar-brand" href="index.html">Country Emissions Predictor</a>
+                    <a class="navbar-brand" href="#">Country Emissions Predictor</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -43,22 +43,18 @@
                 </div>
             </nav>
 
-            <!-- TODO -->            
             <!-- Header-->
-            <header class="bg-dark py-5">
+            <header class="bg-dark py-5" id="">
                 <div class="container px-5">
                     <div class="row gx-5 align-items-center justify-content-center">
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-5 fw-bolder text-white mb-2">Predicting a Country's Greenhouse Gas Emissions Using Production, Import, and Exports of Different Fuels</h1>
                                 <p class="lead fw-normal text-white-50 mb-4">Ian Wu's Data Science Crash Course Project</p>
-                                <p class="lead fw-normal text-white-50 mb-4">SOME OTHER STUFF HERE? DONT FORGET ABOUT OPTION TO ADD BUTTONS BELOW THIS</p>
-                                <!--
                                 <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
-                                    <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                                    <a class="btn btn-primary btn-lg px-4 me-sm-3" href="https://data.un.org/SdmxBrowser/start">Data</a>
+                                    <a class="btn btn-outline-light btn-lg px-4" href="https://www.ai-camp.org/">Learn More About AI Camp</a>
                                 </div>
-                                -->
                             </div>
                         </div>
                         <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
@@ -70,13 +66,12 @@
 
             <!-- TODO -->
             <!-- About section-->
-            <section id="about">
+            <section id="about" style="padding-top: 4rem;">
                 <div class="container px-4">
                     <div class="row gx-4 justify-content-center">
                         <div class="col-lg-8">
-                            <h2>What does the project do?
-                            </h2>
-                            <p class="lead">In our dataset, there is information on population height, literacy, infant mortality, etc... that correlate with each other in interesting ways. Our goal will be to predict the wealth of nations, which will be measured in GDP per capita. Looking at same characteristics of the dataset, the GDP per capita ranges from $500 to $55,100 and has a standard deviation of $9834</p>
+                            <h2>📁🌻🌲🌳🌱🌿 About this project</h2>
+                            <p class="lead">TEMP SUMMARY</p>
                         </div>
                     </div>
                 </div>
@@ -84,7 +79,22 @@
 
             <!-- TODO -->
             <!-- EDA section-->
-            <section class="py-5" id="features">
+            <section id="eda">
+                <div class="container px-4">
+                    <div class="row gx-4 justify-content-center">
+                        <div class="col-lg-8">
+                        <h1 id="top-level-heading">🕵 Exploratoy Data Analysis (EDA)</h1><br/>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3>Exploration of data: Correlation table heatmap</h3>
+                            <p class="lead">First, we created a correlation table to see how different features correlated with the wealth of nations. Some surprising results were that the number of phones per hundred people and male height in cm were highly correlated with GDP per capita. Meanwhile, birthrate and infant mortality were highly negatively correlated</p>
+                        <iframe width="900" height="900" title="Correlation Table of Features" src="{{url_for('static', filename='all_correlation_map.html')}}"></iframe> <br>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--
+            <section class="py-5" id="eda">
                 <div class="container px-5 my-5">
                     <div class="row gx-5">
                         <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0">A better way to start building.</h2></div>
@@ -115,10 +125,26 @@
                     </div>
                 </div>
             </section>
+            -->
 
             <!-- TODO -->
             <!-- Machine learning section-->
-            <div class="py-5 bg-light">
+            <section id="ml">
+                <div class="container px-4">
+                    <div class="row gx-4 justify-content-center">
+                        <div class="col-lg-8">
+                            <h1>🦾 Machine Learning</h1></br>
+                        </div>
+                        <div class="col-lg-8">
+                            <h2>Linear Regression: Explanation</h2>
+                            <p class="lead">First, we want to try a baseline linear regression. Linear regression assumes that all features are have a linear relation with GDP per capita, and we can fit a line of best fit to predict future values</p>
+                            <img src="{{url_for('static', filename='images/LinearExplanation.png')}}" class="page-image" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--
+            <div class="py-5 bg-light" id="ml">
                 <div class="container px-5 my-5">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-10 col-xl-7">
@@ -136,8 +162,7 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Call to action-->
+
                 <aside class="bg-primary bg-gradient rounded-3 p-4 p-sm-5 mt-5">
                     <div class="d-flex align-items-center justify-content-between flex-column flex-xl-row text-center text-xl-start">
                         <div class="mb-4 mb-xl-0">
@@ -154,32 +179,31 @@
                     </div>
                 </aside>
             </div>
+            -->
 
             <!-- TODO -->
             <!-- Conclusion section-->
-            <div class="py-5 bg-light">
-                <div class="container px-5 my-5">
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-10 col-xl-7">
-                            <div class="text-center">
-                                <div class="fs-4 mb-4 fst-italic">"Working with Start Bootstrap templates has saved me tons of development time when building new projects! Starting with a Bootstrap template just makes things easier!"</div>
-                                <div class="d-flex align-items-center justify-content-center">
-                                    <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
-                                    <div class="fw-bold">
-                                        Tom Ato
-                                        <span class="fw-bold text-primary mx-1">/</span>
-                                        CEO, Pomodoro
-                                    </div>
-                                </div>
-                            </div>
+            <section class="bg-light" id="Conclusion">
+                <div class="container px-4">
+                    <div class="row gx-4 justify-content-center">
+                        <div class="col-lg-8">
+                        <h1 id="top-level-heading">💡 Conclusion</h1><br/>
+                        </div>
+                        <div class="col-lg-8">
+
+                            <p class="lead">In conclusion, neural networks clearly performed the best on our dataset for predicting GDP per capita. Positively correlated features like height and phone usage along with negatively correlated features like birthrate and agriculture helped us achieve these results. </p>
+
+                            <h3>So what?</h3>
+                                
+                            <p class="lead">So what is the significance of our project? Because we know which features are most correlated with a higher GDP country, we can identify both the factors that lead to countries with higher monetary value and also predict and then invest in countries with a high likelihood of future growth. </p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- Team section-->
             <section class="py-5" id="team">
-                <div class="container px-5 my-5">
+                <div class="container px-5", style="margin-bottom: 3rem !important;">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
                             <div class="text-center">
@@ -194,7 +218,7 @@
                                 <img class="card-img-top" src="{{url_for('static', filename='images/michael.png')}}" alt="..." style="max-height: 200px; width:auto;"/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Founder</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Michael Ke Zhang</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">Michael Ke Zhang</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -203,7 +227,7 @@
                                 <img class="card-img-top" src="{{url_for('static', filename='images/richard.png')}}" alt="..." style="max-height: 200px; width:auto;"/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Founder</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Richard Hsu</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">Richard Hsu</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -212,7 +236,7 @@
                                 <img class="card-img-top" src="{{url_for('static', filename='images/alex.png')}}" alt="..." style="max-height: 200px; width:auto;"/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Instructor</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Alex Duffy</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">Alex Duffy</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -223,7 +247,7 @@
                                 <img class="card-img-top" src="{{url_for('static', filename='images/mitch.png')}}" alt="..." style="max-height: 200px; width:auto;"/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Instructor</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Mitch Cutts</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">Mitch Cutts</h5></a>
                                 </div>
                             </div>
                         </div>
@@ -232,7 +256,7 @@
                                 <img class="card-img-top" src="{{url_for('static', filename='images/ian.png')}}" alt="..." style="max-height: 200px; width:auto;"/>
                                 <div class="card-body p-4">
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2">Intern</div>
-                                    <a class="text-decoration-none link-dark stretched-link" href="#!"><h5 class="card-title mb-3">Ian Wu</h5></a>
+                                    <a class="text-decoration-none link-dark stretched-link" ><h5 class="card-title mb-3">Ian Wu</h5></a>
                                 </div>
                             </div>
                         </div>
