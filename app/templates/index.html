@@ -73,7 +73,8 @@
                             <h2>🌿 About this project</h2>
                             <p class="lead">
                                 Although global warming is an extremely pressing international issue, it can often be difficult to determine which countries contribute the most, as emissions are often misreported or not even reported at all.
-                                The United Nations Statistics Division makes a variety data on UN member countries available online through UNData.org. From their API, we have collected and aggregated historical data on fossil fuel imports, exports, and production by country, which we aim to use to predict greenhouse gas emissions. This is particularly useful as while many countries will report their imports, exports, and production of certain rescources, it is much less common to report emissions.
+                                </br>
+                                TEMP, MORE
                             </p>
                         </div>
                     </div>
@@ -82,11 +83,41 @@
 
             <!-- TODO -->
             <!-- EDA section-->
-            <section id="eda">
+            <section id="eda" style="padding-top: 0">
                 <div class="container px-4">
                     <div class="row gx-4 justify-content-center">
                         <div class="col-lg-8">
-                        <h1 id="top-level-heading">🕵 Exploratoy Data Analysis (EDA)</h1><br/>
+                        <h1 id="top-level-heading">🕵 Exploratory Data Analysis (EDA)</h1><br/>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3>Dataset</h3>
+                            <p class="lead">
+                                The United Nations Statistics Division makes a variety data on UN member countries available online. From their <a href="https://data.un.org/">API</a>, we have collected historical data on greenhouse gas emissions and fossil fuel imports, exports, and production by country and year and aggregated it into a single dataset. This data is purely numerical and does not contain any categorical columns.
+                                <br>
+                                <br>
+                                We collected data on 5 fossil fuels: 
+                                    <ol>
+                                        <li>Hard Coal</li>
+                                        <li>Natural Gas</li>
+                                        <li>Crude Oil</li>
+                                        <li>Motor Gasoline</li>
+                                        <li>Gas Oil/Diesel Oil</li>
+                                    </ol>
+                                <br>
+                                Unfortunately, due to inconsistent reporting, there is a moderate degree of sparsity which must be dealt with.
+                            </p>
+                        </div>
+                        <div class="col-lg-8">
+                            <h3>Missing Value Analysis</h3>
+                            <p class="lead">
+                                TEMP DESCRIPTION
+                                </br>
+                                <iframe width="900" height="400" title="Missing Value Analysis" src="{{url_for('static', filename='missing_val_row_counts.html')}}"></iframe> <br>
+                                TEMP DESCRIPTION
+                                </br>
+                                <iframe width="900" height="600" title="Missing Value Analysis" src="{{url_for('static', filename='missing_values.html')}}"></iframe> <br>
+                                TEMP HERE, CONCLUSION ABOUT DROPPING CERTAIN VALUES
+                            </p>
                         </div>
                         <div class="col-lg-8">
                             <h3>Exploration of data: Correlation table heatmap</h3>
@@ -99,7 +130,7 @@
 
             <!-- TODO -->
             <!-- Machine learning section-->
-            <section id="ml">
+            <section id="ml" style="padding-top: 0">
                 <div class="container px-4">
                     <div class="row gx-4 justify-content-center">
                         <div class="col-lg-8">
@@ -113,10 +144,10 @@
                     </div>
                 </div>
             </section>
-            
+
             <!-- TODO -->
             <!-- Conclusion section-->
-            <section class="bg-light" id="Conclusion">
+            <section class="bg-light" id="Conclusion" style="padding-top: 0">
                 <div class="container px-4">
                     <div class="row gx-4 justify-content-center">
                         <div class="col-lg-8">
@@ -135,7 +166,7 @@
             </section>
 
             <!-- Team section-->
-            <section class="py-5" id="team">
+            <section class="py-5" id="team" style="padding-top: 0">
                 <div class="container px-5", style="margin-bottom: 3rem !important;">
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
