@@ -1,0 +1,9 @@
+{"backend_state":"running","connection_file":"/projects/75e8805e-9d9a-4946-947e-b12344497944/.local/share/jupyter/runtime/kernel-433ee625-d136-41bc-89a1-2d5647397eae.json","kernel":"ianenv","kernel_error":"","kernel_state":"idle","kernel_usage":{"cpu":0,"memory":0},"trust":true,"type":"settings"}
+{"cell_type":"code","end":1651439627750,"exec_count":7,"id":"ba4185","input":"df = pd.read_csv('../Data/complete_data.csv')\n\ndf = df.astype('float32')\ntarget = df.pop('Greenhouse Gas Emissions')\ntrain_in, test_in, train_out, test_out = train_test_split(df, target, test_size = 0.2, shuffle=True)","kernel":"ianenv","pos":1,"start":1651439627739,"state":"done","type":"cell"}
+{"cell_type":"code","end":1651439627821,"exec_count":8,"id":"deba5e","input":"reg = LinearRegression()\nreg.fit(train_in, train_out)","kernel":"ianenv","output":{"0":{"data":{"text/plain":"LinearRegression()"},"exec_count":8}},"pos":2,"start":1651439627752,"state":"done","type":"cell"}
+{"cell_type":"code","end":1651439627830,"exec_count":9,"id":"8c07eb","input":"test_predictions = reg.predict(test_in)","kernel":"ianenv","pos":3,"start":1651439627828,"state":"done","type":"cell"}
+{"cell_type":"code","exec_count":6,"id":"fdd5a4","input":"import numpy as np\nimport pandas as pd\nimport plotly.express as px\nfrom sklearn.linear_model import LinearRegression\nfrom sklearn.model_selection import train_test_split\nimport tensorflow as tf","kernel":"ianenv","pos":0,"state":"done","type":"cell"}
+{"end":1651439628132,"exec_count":10,"id":"910fab","input":"fig = px.scatter(x=test_out, y=test_predictions)\nfig.show()","kernel":"ianenv","output":{"0":{"data":{"iframe":"0c8befbb6675d8bac316af4ba47c0da258936457"}}},"pos":4,"start":1651439627836,"state":"done","type":"cell"}
+{"id":"7c8621","input":"","pos":5,"type":"cell"}
+{"id":0,"time":1651434708707,"type":"user"}
+{"last_load":1651434708718,"type":"file"}
