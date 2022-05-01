@@ -80,7 +80,6 @@
                 </div>
             </section>
 
-            <!-- TODO -->
             <!-- EDA section-->
             <section id="eda" style="padding-top: 0">
                 <div class="container px-4">
@@ -116,20 +115,20 @@
                             <h3>Correlations</h3>
                             <p class="lead">To visualize how the variables in our dataset relate to eachother, a correlation matrix is shown.</p>
                             <iframe width="950" height="850" title="Correlation Table of Features" src="{{url_for('static', filename='cor_mat.html')}}"></iframe>
-                            <p class="lead"> From this heatmap, we can see that "Motor Gasoline Production", "Gas Oil/Diesel Oil Production", "Crude Oil Import", and "Motor Gasoline Import" are highly correlated with eachother and are thus not all necessary data to give our model. To understand their relationship to eachother as well as greenhouse gas emissions, they are plotted below.</p>
+                            <p class="lead"> From this heatmap, we can see that "Motor Gasoline Production", "Gas Oil/Diesel Oil Production", "Crude Oil Import", and "Motor Gasoline Import" are highly correlated with eachother and are thus not all necessary data to give our model. This correlation is likely due to these specific fossil fuels having very similar uses (transportation/product distribution) and are therefore highly correlated. To understand how they relate to eachother as well as greenhouse gas emissions, they are plotted below.</p>
                             <iframe width="950" height="950" title="Correlation Table of Features" src="{{url_for('static', filename='correlated_variables.html')}}"></iframe>
-                            <p class="lead">TEMP DESCRIPTION DISCUSSING CORRELATIONS AND FURTHER HYPOTHICES</p>
-                            <p class="lead">As motor gasoline production has the highest correlation with greenhouse gas emissions, the other columns are droped.</p>
-                            <iframe width="950" height="950" title="Correlation Table of Features" src="{{url_for('static', filename='cor_mat_after_drop.html')}}"></iframe> <br>
-                            <p class="lead">TEMP</p>
-                        </div>
-                        <div class="col-lg-9">
-                            <h3>MORE VISUALIZATIONS (TEMP)</h3>
-                            <p class="lead">TEMP DESCRIPTION</p>
+                            <iframe width="950" height="500" title="Correlation Table of Features" src="{{url_for('static', filename='emissions_vs_correlated_fuels.html')}}"></iframe>
+                            <p class="lead">From these plots we can see that there are two very distinct groups in the dataset, one with high emissions and imports of these fuels, and one with low emissions and imports. It initially seems likely that these groups correlate with industrialized nations, as these fuels are all essential to manufacturing and industry, which are primary contributers to greenhouse gas emissions. However, after further data analysis the high emissions group actually consists only of samples from United States. However, this still makes sense, as the US has extremely high levels of both vehicle ownership and emissions.</p>
+                            <p class="lead">Although motor gasoline production has the highest correlation with greenhouse gas emissions, crude oil imports have the least clustering and a more linear relationship with greenhouse gas emissions. Therefore, the "Motor Gasoline Production", "Gas Oil/Diesel Oil Production",  and "Motor Gasoline Import" will be dropped.</p>
+                            <iframe width="950" height="750" title="Correlation Table of Features" src="{{url_for('static', filename='cor_mat_after_drop.html')}}"></iframe>
                         </div>
                         <div class="col-lg-9">
                             <h3>Filling Missing Values</h3>
                             <p class="lead">To create our prediction model, missing values must be filled in to complete the dataset. This was done by simple replacing each missing value wiht the mean value for its column.</p>
+                        </div>
+                        <div class="col-lg-9">
+                            <h3>Normalization</h3>
+                            <p class="lead">Because many of the values in this dataset have extremely different ranges, the values are also normalized to ensure that one variable does not have a disproportionate effect on our model's results.</p>
                         </div>
                     </div>
                 </div>
