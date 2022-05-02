@@ -89,7 +89,7 @@
                         </div>
                         <div class="col-lg-9">
                             <h3>Dataset</h3>
-                            <p class="lead">The United Nations Statistics Division makes a variety data on UN member countries available online. From their <a href="https://data.un.org/">API</a>, we have collected historical data on greenhouse gas emissions and fossil fuel imports, exports, and production by country and year and aggregated it into a single dataset. This data is purely numerical and does not contain any categorical columns.</p>
+                            <p class="lead">The United Nations Statistics Division makes a variety data on UN member countries available online. From their <a href="https://data.un.org/">API</a>, we have collected historical yearly data on greenhouse gas emissions and fossil fuel imports, exports, and production for 43 countries aggregated it into a single dataset. This data is purely numerical and does not contain any categorical columns aside from the reference area (country) for each sample.</p>
                             We collected data on 5 fossil fuels: 
                             <ol>
                                 <li>Hard Coal</li>
@@ -134,7 +134,6 @@
                 </div>
             </section>
 
-            <!-- TODO -->
             <!-- Machine learning section-->
             <section id="ml">
                 <div class="container px-4">
@@ -144,23 +143,29 @@
                         </div>
                         <div class="col-lg-9">
                             <h2>Linear Regression: Explanation</h2>
-                            <p class="lead">Linear regression is a quintessential machine learning technique, which tries to determine coefficients which will best fit the data. </p>
+                            <p class="lead">Linear regression is a quintessential machine learning technique that attempts generate an linear equation which can accurately model our data. However, as the name implies, linear regression is not effective for modeling non-linear data.</p>
                             <img src="{{url_for('static', filename='images/LinearExplanation.png')}}" class="page-image" /> <br>
                         </div><p></p>
                         <div class="col-lg-9">
                             <h2>Neural Network: Explanation</h2>
-                            <p class="lead">TEMP TEXT</p>
+                            <p class="lead">Neural networks are an extremely effective tool for modeling complex and non-linear systems. In a neural net, a set of inputs are given to the network, which passes them through a series of nodes to generate an prediction. However, neural nets can overfit to their training data if they are improperly trained.</p>
                             <img src="{{url_for('static', filename='images/nn_explanation.png')}}" class="page-image" width="500px"/> <br>
                         </div><p></p>
                         <div class="col-lg-9">
                             <h2>Random Forest Regression: Explanation</h2>
-                            <p class="lead">TEMP TEXT</p>
+                            <p class="lead">A random forest regression model creates multiple decision trees which each try to model the data on their own. By combining the predictions many decision trees, this model can predict more complex systems than a single decision tree could. Random forest regression is particularly well-suited for non-linear data and reducing overfitting.</p>
                             <img src="{{url_for('static', filename='images/rf regression.png')}}" class="page-image" width="600px"/> <br>
                         </div><p></p>
                         <div class="col-lg-9">
                             <h2>Comparing Results</h2>
-                            <p class="lead">TEMP TEXT</p>
-                            <iframe width="950" height="950" title="Correlation Table of Features" src="{{url_for('static', filename='ml_results.html')}}"></iframe>
+                            <p class="lead">After training models for the three techniques, their mean absolute error on our testing data is calculated.</p>
+                            <ul style="list-style-type:none;">
+                                <li>Linear Regression 198,929.90625</li>
+                                <li>Neural Net 255,823.65625</li>
+                                <li>Random Forest Regression 72,084.0974354859</li>
+                            </ul>
+                            <p class="lead">From this, we can see that the random forest regression model significantly outperforms the other two methods. This is likely due to the clusters in the data (discussed in the <a href="#eda">EDA</a> section), which random forest regression is particularly well suited to handle as it is comprised of decision trees. The testing results for all machine learning techniques tested are visualized below.</p>
+                            <iframe width="950" height="400" title="Correlation Table of Features" src="{{url_for('static', filename='ml_results.html')}}"></iframe>
                         </div>
                     </div>
                 </div>
@@ -176,9 +181,9 @@
                         </div>
                         <div class="col-lg-9">
                             <h3>Summary</h3>
-                            <p class="lead">TEMP</p>
+                            <p class="lead">We compiled and cleaned a sparse dataset from the UNData API and used this data to train three regression models to predict a countries yearly greenhouse gas emissions based on fossil fuel production, import, and export volumes. A linear regression model, neural network, and random forest regression model were trained, with the random forest regression achieving the highest accuracy by a significant margin.</p>
                             <h3>Recomendations</h3>
-                            <p class="lead">TEMP</p>
+                            <p class="lead">Although this project was able to reasonably approximate greenhouse gas emissions with only 9 input features, emission levels are influenced by many variables, as has been extensively researched and proven. By incorporating additional variables to this dataset, an even more accurate model could certainly be achieved. Although we were unable to obtain the data, adding samples from additional countries would also strengthen the models.</p>
                         </div>
                     </div>
                 </div>
